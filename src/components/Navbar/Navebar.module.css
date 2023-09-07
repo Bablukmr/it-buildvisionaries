@@ -1,3 +1,44 @@
+.menu li{
+    position: relative;
+    width: max-content;
+    border-bottom: 4px solid transparent;
+}
+.menu li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: 0;
+    background-color: rgba(114, 130, 120, 0.676);
+    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.menu li:hover::after{
+    animation-name: lineanim;
+    animation-duration: 1.2s;
+}
+@keyframes lineanim {
+    0%{
+        left: 0%;
+        width: 0%;
+    }
+   50%{
+        width: 100%;
+        left: 0%;
+    }
+    100%{
+        left: 100%;
+        width: 0%;
+    }
+}
+
+.downmenue:hover {
+    cursor: pointer;
+}
+
+.downmenue:hover .down {
+    transform: rotate(180deg);
+  }
 .navbar{
     width: 100%;
     height: 5rem;
@@ -10,19 +51,12 @@
 }
 
 .menu {
-   
 display: grid;
 grid-template-columns: 17% 20% 15% 18% 10% 10%;
 gap: .5rem;
+
 }
 
-.downmenue:hover{
-    cursor: pointer;
-}
-
-.downmenue:hover .down {
-    transform: rotate(180deg);
-  }
   @media screen and (max-width:980px){
     .menu{
       display: none;
