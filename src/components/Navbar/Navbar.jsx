@@ -1,20 +1,18 @@
 "use client"
 import Image from "next/image";
-import img from '../../assets/iconpng.png'
-import Link from "next/link";
-import Styles from './Navebar.modules.css'
+import styles from './Navebar.module.css'
 import {navitem} from './navbaritems'
 import MenueItem from "./MenueItem";
+import Logo from "./Logo";
 
 export default function Navbar() {
-  console.log(navitem);
   return (
-    <nav className={`${Styles.navbar} mt-0 rounded-sm  flex justify-between`}>
+    <nav className={`${styles.navbar}`}>
       <div >
-     <Link href={'/'} className="flex items-center"><Image src={img} alt="Logo" width={80}/><h1 className="text-blue-800 text-lg font-bold ">BUILD<span className="text-amber-300">VISIONARY</span></h1></Link> 
+     <Logo/>
       </div>
       <div >
-        <ul className={`${Styles.menu} m-7 text-lg hidden sm:flex md:flex`}>
+        <ul className={`${styles.menu}`}>
         {
           navitem.map((item,index)=>
           {return( <MenueItem key={index} item={item} depth={1}/>)}
