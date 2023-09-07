@@ -4,7 +4,7 @@ import img from '../../assets/iconpng.png'
 import Link from "next/link";
 import Styles from './Navebar.modules.css'
 import {navitem} from './navbaritems'
-
+import MenueItem from "./MenueItem";
 
 export default function Navbar() {
   console.log(navitem);
@@ -17,7 +17,7 @@ export default function Navbar() {
         <ul className={`${Styles.menu} m-7 text-lg hidden sm:flex md:flex`}>
         {
           navitem.map((item,index)=>
-          {return( <li key={index}>{item.title}</li>)}
+          {return( <MenueItem key={index} item={item} depth={1}/>)}
           )
         }
         </ul>
