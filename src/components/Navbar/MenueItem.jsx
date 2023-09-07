@@ -13,19 +13,21 @@ export default function MenuItem({ item }) {
           <span className={styles.downmenu}>
             {item.title} <ArrowDropDownIcon className={styles.down} />
           </span>
-        {false ? ( {item.subitem && item.subitem.length > 0 && (
+          {false ? (
             <ul className=''>
-              {item.subitem.map((subitem, index) => (
-                <li key={index}>
-                  {subitem.url ? (
-                    <Link href={subitem.url}>{subitem.title}</Link>
-                  ) : (
-                    subitem.title
-                  )}
-                </li>
-              ))}
+              {item.subitem && item.subitem.length > 0 && (
+                item.subitem.map((subitem, index) => (
+                  <li key={index}>
+                    {subitem.url ? (
+                      <Link href={subitem.url}>{subitem.title}</Link>
+                    ) : (
+                      subitem.title
+                    )}
+                  </li>
+                ))
+              )}
             </ul>
-          )}):""}
+          ) : null}
         </>
       )}
     </li>
