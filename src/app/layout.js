@@ -13,9 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <div>
-          <Navbar/>
-         {children}
+        <div >
+          <div className='min-h-[5rem]'><Navbar /></div>
+          
+          <div > {children}</div>
+        
         </div>
         </body>
     </html>
