@@ -8,7 +8,7 @@ export const links = [
       {
         Head: 'Web Development',
         sublink: [
-          { name: 'Website Development', link: '/' },
+          { name: 'Website Development', link: '/about' },
           { name: 'Software Development', link: '/' },
           { name: 'Mobile App Development', link: '/' },
           { name: 'UI/UX Design', link: '/' },

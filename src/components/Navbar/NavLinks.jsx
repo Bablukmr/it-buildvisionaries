@@ -4,7 +4,7 @@ import { links } from "./NavLink";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
-export default function NavLinks() {
+export default function NavLinks({setOpen}) {
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
 
@@ -41,7 +41,7 @@ export default function NavLinks() {
                   <div className="py-1.5">
                     <div className="w-4 h-4 bg-white absolute rotate-45"></div>
                   </div>
-                  <div className="bg-white ml-[-1rem] w-full p-4 flex gap-5 flex-wrap">
+                  <div className="bg-white ml-[-1rem] w-full p-4 flex gap-5 flex-wrap rounded-sm drop-shadow-2xl">
                     {link.sublinks.map((item, id) => (
                       <div className="p-3.5" key={id}>
                         <h1 className="text-lg font-semibold ">{item.Head}</h1>
@@ -93,7 +93,7 @@ export default function NavLinks() {
                     }`}
                   >
                     {slinks.sublink.map((slink, sid) => (
-                      <li className="py-3 pl-14" key={sid}>
+                      <li className="py-3 pl-14" key={sid} onClick={()=>setOpen(!open)}>
                         <Link href={slink.link}>{slink.name}</Link>
                       </li>
                     ))}
